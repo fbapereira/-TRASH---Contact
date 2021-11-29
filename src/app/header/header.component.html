@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <button (click)="navbar.toggle()" class="header-button" mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Contacts</span>
+</mat-toolbar>
+
+<mat-drawer-container class="side-nav" autosize>
+    <mat-drawer #navbar class="side-nav-bar" mode="side">
+      <a routerLink="/" (click)="navbar.toggle()">
+        <mat-icon>home</mat-icon>
+        Home
+      </a>
+      <mat-divider></mat-divider>
+      <a routerLink="/contacts" (click)="navbar.toggle()">
+        <mat-icon>face</mat-icon>
+        Contact
+      </a>
+      <mat-divider></mat-divider>
+    </mat-drawer>
+</mat-drawer-container>

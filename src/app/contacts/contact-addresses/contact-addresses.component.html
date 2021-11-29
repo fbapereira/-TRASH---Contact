@@ -1,0 +1,43 @@
+<div class="address" *ngIf="selectedContact$ | async as contact">
+    <div class="center">
+        <img class="avatar-big" [src]="contact.avatar" />
+        <h2> {{ contact | name }} </h2>
+    </div>
+    <div *ngFor="let address of address$ | async">
+        <app-contact-address [address]="address"></app-contact-address> 
+    </div>
+    <h3>Address #1</h3>
+    <form [formGroup]="form" class="form">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Street 1</mat-label>
+            <input matInput placeholder="Street 1" formControlName="street1">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Street 2</mat-label>
+            <input matInput placeholder="Street 2" formControlName="street2">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Town</mat-label>
+            <input matInput placeholder="Town" formControlName="town">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Country</mat-label>
+            <mat-select formControlName="country">
+                <mat-option *ngFor="let country of countries$ | async" [value]="country.iso2">
+                    {{country.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <p class="error" *ngIf="form.touched && form.invalid"> Please, fill all fields</p>
+        <button
+            type="submit"
+            mat-flat-button
+            color="primary"
+            (click)="addAddress()"
+            [disabled]="form.pristine || form.invalid"
+        >Save</button>
+    </form>
+</div>

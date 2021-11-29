@@ -1,0 +1,118 @@
+{
+  // "extends": [
+  //   "tslint:recommended",
+  //   "tslint-angular"
+  // ],
+  "rulesDirectory": [
+    "./tslint",
+    "./node_modules/rxjs-tslint"
+  ],
+  "rules": {
+    "arrow-parens": false,
+    "import-blacklist": [
+      true,
+      "@angular/material",
+      "@angular/compiler/src/core"
+    ],
+    "interface-name": false,
+    "max-classes-per-file": false,
+    "no-console": [
+      true,
+      "log"
+    ],
+    "no-import-side-effect": [
+      true,
+      {
+        "ignore-module": [
+          "(zone.js/*|ionic-split-pane|web-animations-js|core-js/*)"
+        ]
+      }
+    ],
+    "no-irregular-whitespace": true,
+    "one-line": [
+      true,
+      "check-catch",
+      "check-finally"
+    ],
+    "prefer-object-spread": true,
+    "space-within-parens": [
+      true,
+      0
+    ],
+    "variable-name": [
+      true,
+      "allow-leading-underscore",
+      "allow-snake-case",
+      "ban-keywords",
+      "check-format"
+    ],
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-decl",
+      "check-module",
+      "check-operator",
+      "check-preblock",
+      "check-rest-spread",
+      "check-separator",
+      "check-type-operator",
+      "check-type",
+      "check-typecast"
+    ],
+
+    // Codelyzer rules
+    "angular-whitespace": [
+      true,
+      "check-interpolation",
+      "check-semicolon"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "xc",
+      "kebab-case"
+    ],
+    "decorator-not-allowed": true,
+    "directive-selector": [
+      true,
+      "attribute",
+      "xc",
+      "camelCase"
+    ],
+    "i18n": [
+      false,
+      "check-text"
+    ],
+    "import-destructuring-spacing": true,
+    "no-attribute-parameter-decorator": true,
+    "no-forward-ref": true,
+    "no-output-named-after-standard-event": false,
+    "no-unused-css": true,
+    "pipe-impure": true,
+    "templates-no-negated-async": true,
+    "trackBy-function": false,
+    "use-pipe-decorator": true,
+
+    // Custom TSLint rules
+    "import-barrels": [
+      true,
+      {
+        "noExplicitBarrels": true
+      }
+    ],
+
+    // rxjs 6
+    "rxjs-collapse-imports": true,
+    "rxjs-pipeable-operators-only": true,
+    "rxjs-no-static-observable-methods": true,
+    "rxjs-proper-imports": true,
+
+    // Our rules
+    "no-restricted-globals": [
+      true,
+      "document",
+      "location",
+      "window"
+    ]
+  }
+}

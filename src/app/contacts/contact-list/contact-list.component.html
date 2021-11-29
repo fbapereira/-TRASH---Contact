@@ -1,0 +1,30 @@
+<div class="contact-list">
+    <div class="contact-item" (click)="selectContact(contact)" *ngFor="let contact of contacts$ | async" >
+        <img class="avatar" [src]="contact.avatar" />
+        {{ contact | name }}
+    </div>
+    <div>
+        <form [formGroup]="form" class="new-contact" novalidate>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="Ex. John" value="" formControlName="first_name">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Ex. Tittoe" value="" formControlName="last_name">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Avatar URL</mat-label>
+            <input matInput placeholder="Ex. https://google.com/img.jpg" value=""  formControlName="avatar">
+        </mat-form-field>
+    </form>
+    <p class="error" *ngIf="form.touched && form.invalid"> Please, fill all fields</p>
+    <button
+        type="submit"
+        mat-flat-button
+        color="primary"
+        (click)="addContact()"
+        [disabled]="form.pristine || form.invalid"
+    >Save</button>
+    </div>
+</div>

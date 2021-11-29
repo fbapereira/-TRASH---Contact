@@ -1,0 +1,23 @@
+.contact-item {
+  display: flex;
+  margin: 1rem;
+  align-items: center;
+
+  img {
+    margin: 1rem 1rem 1rem 0;
+  }
+
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+
+.new-contact {
+  display: flex;
+  flex-direction: column;
+}

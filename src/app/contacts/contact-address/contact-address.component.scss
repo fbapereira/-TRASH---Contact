@@ -1,0 +1,11 @@
+.address {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+
+    .field {
+        width: 50%;
+        justify-content: center;
+    }
+}

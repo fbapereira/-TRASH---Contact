@@ -1,0 +1,32 @@
+.header-button {
+    background-color: transparent;
+    margin: 0 1rem;
+    border: 0;
+    color: white;
+}
+
+.side-nav {
+    height: 100%;
+    position: fixed;
+
+    &-bar{
+        background-color: #5051b5;
+        padding: 1rem;
+        min-width: none;
+
+        a {
+            color: white;
+            display: flex;
+            padding: 1rem;
+            min-width: 20vw;
+            height: 2rem;
+            line-height: 2rem;
+            vertical-align: middle;
+            text-decoration: none;
+
+            mat-icon {
+                margin: 0 1rem;
+            }
+        }
+    }
+}
